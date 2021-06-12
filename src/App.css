@@ -1,0 +1,129 @@
+:root {
+  --primary: #1E1D2B;
+  --secondary: #222433;
+  --highlight: rgb(211, 187, 156);
+}
+body {
+  background-color: #1a759f;
+  display: flex;
+  justify-content: space-around;
+}
+.maindiv {
+  width: 1300px; 
+  height: 700px;
+  background-color: var(--primary);
+  margin-top: 80px;
+  border-radius: 30px 30px 30px 30px;
+  padding-top: 20px;
+  padding-left: 60px;
+  flex-direction: column;
+}
+.topBar {
+  background-color: var(--secondary);
+  height: 60px;
+  width: 95%; 
+  border-radius: 20px 20px 20px 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.middleContent {
+  height: 550px;
+  width: 95%; 
+  margin-top: 30px;
+  border-radius: 20px 20px 20px 20px;
+  background-color: var(--secondary) ;
+  color: #FFFFFF;
+}
+.middleContentWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+#middleContentHeader {
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+.middleContentBottom {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.middleContentBottomLeft {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+}
+.middleContentBottomRight {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+.coinImg {
+  margin-top: 6px;
+  width: 48px;
+  height: 48px;
+}
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+input {
+  background: none;
+}
+.dataView {
+  padding-top: 10px;
+}
+#header {
+  color:var(--highlight);
+  font-size: 120%;
+  font-weight: 300px;
+}
+#value {
+  color: #B3B3B2;
+}
+.chart {
+  width: 100%;
+  padding-left: 50px;
+}
+.TopHeader {
+  background-color: var(--primary);
+  width: 100%;
+  height: 80px;
+  border-radius: 00px 00px 30px 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.topDiv {
+}
+#searchInput{
+  background-color: #242635;
+  width: 400px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 20%;
+  border: 0;
+  border-radius: 20px 20px 20px 20px;
+  font-size: 24px;
+  text-align: center;
+  color: var(--highlight);
+}
+#searchInput:focus {
+  background-color: #242635;
+  border: 1px solid var(--highlight);
+  outline: 0;
+}
+.searchListDataView {
+  background-color: var(--secondary);
+  border: 2px solid var(--highlight);
+  height: 200px;
+  width: 402px;
+  margin-left: 21.7%;
+  position: absolute;
+  z-index: 1000;
+  color: var(--highlight);
+}
