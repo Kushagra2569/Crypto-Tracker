@@ -13,6 +13,7 @@ function TopHeader(props) {
         .then((response) => response.json())
         .then((data) => {
             setCoinsList([...data]);
+            setCoinsSug([]);
         });
     }
     function coinsAutocomplete() {
@@ -23,9 +24,22 @@ function TopHeader(props) {
                 if(autoCompleteCounter < 50) {
                     let id = coin.id;
                     if(id.startsWith(text)) {
-                        newArray.push(id);
+                        newArray.push({name:id,symbol:coin.symbol});
                         autoCompleteCounter += 1;
                     }
+                }
+            });
+        }
+        setCoinsSug(newArray);
+    }
+    function populateCoinsSug() {
+        let autoCompleteCounter = 0;
+        let newArray = [];
+        if(coinsList !== []) {
+            coinsList.forEach(coin => {
+                if(autoCompleteCounter <= 5) {
+                    newArray.push({name:coin.id,symbol:coin.symbol});
+                    autoCompleteCounter += 1;
                 }
             });
         }
@@ -34,6 +48,10 @@ function TopHeader(props) {
     useEffect(() => {
         getAutoCompleteData();
     }, [])
+
+    useEffect(() => {
+        populateCoinsSug();
+    },[coinsList])
 
     useEffect(() => {
         coinsAutocomplete();
