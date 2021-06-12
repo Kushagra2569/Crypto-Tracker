@@ -104,7 +104,7 @@ input {
   background-color: #242635;
   width: 400px;
   height: 50px;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-left: 20%;
   border: 0;
   border-radius: 20px 20px 20px 20px;
@@ -122,7 +122,7 @@ input {
   border: 2px solid var(--highlight);
   height: 200px;
   width: 402px;
-  margin-left: 21.7%;
+  margin-left: 20.9%;
   position: absolute;
   z-index: 1000;
   color: var(--highlight);

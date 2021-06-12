@@ -13,35 +13,42 @@ function TopHeader(props) {
         .then((response) => response.json())
         .then((data) => {
             setCoinsList([...data]);
-            console.log(coinsList);
         });
     }
     function coinsAutocomplete() {
-        if(coinsList != []) {
-            console.log('entered coinslist not null');
+        let autoCompleteCounter = 0;
+        if(coinsList !== []) {
             coinsList.forEach(coin => {
-                let id = coin.id;
-                if(id.includes(text)) {
-                    console.log(id);
+                if(autoCompleteCounter < 50) {
+                    let id = coin.id;
+                    if(id.startsWith(text)) {
+                        coinsSug.push(id);
+                        autoCompleteCounter += 1;
+                    }
                 }
             });
+        }
     }
-}
     useEffect(() => {
         getAutoCompleteData();
     }, [])
+
+    useEffect(() => {
+        coinsAutocomplete();
+    },[text])
+
     return (
         <div>
             <div className="TopHeader">
                 <div className="searchBar">
                     <input type='text' id='searchInput' value={text} 
                     onChange={e => {setText(e.target.value);
-                    coinsAutocomplete();}} 
+                    }} 
                     onFocus={ () => {props.setOpen(true)}} onBlur={ () => {props.setOpen(false)}} />
                 </div>
                 <p>X</p>
             </div>
-            {props.open && <SearchListData /> }
+            {props.open && <SearchListData coinsSuggestion={coinsSug}/> }
         </div>
     )
 }

@@ -46,7 +46,7 @@ function Main() {
         </div>
         <div className="maindiv">
             <TopBar changeCoin={changeSelCoin} />
-            <MiddleContent coinProp={coinProp} selCoin = {selCoin}/>
+            <MiddleContent coinProp={coinProp} selCoin={selCoin}/>
         </div>
       </div>
   );
