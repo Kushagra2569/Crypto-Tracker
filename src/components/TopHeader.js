@@ -4,7 +4,7 @@ import SearchListData from './SearchListData'
 function TopHeader(props) {
     const [text, setText] = useState('');
     const [coinsList, setCoinsList] = useState([]);
-    let coinsSug = [];
+    const [coinsSug, setCoinsSug] = useState([])
 
     function getAutoCompleteData() {
         let url =
@@ -17,17 +17,19 @@ function TopHeader(props) {
     }
     function coinsAutocomplete() {
         let autoCompleteCounter = 0;
+        let newArray = [];
         if(coinsList !== []) {
             coinsList.forEach(coin => {
                 if(autoCompleteCounter < 50) {
                     let id = coin.id;
                     if(id.startsWith(text)) {
-                        coinsSug.push(id);
+                        newArray.push(id);
                         autoCompleteCounter += 1;
                     }
                 }
             });
         }
+        setCoinsSug(newArray);
     }
     useEffect(() => {
         getAutoCompleteData();

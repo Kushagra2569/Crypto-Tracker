@@ -8,7 +8,7 @@ function SearchListData(props) {
     
     return (
         <div className='searchListDataView'>
-            bitcoinsssk
+            {props.coinsSuggestion[0]}
         </div>
     )
 }
