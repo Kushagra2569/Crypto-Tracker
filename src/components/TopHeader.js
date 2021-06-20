@@ -21,7 +21,7 @@ function TopHeader(props) {
         let newArray = [];
         if(coinsList !== []) {
             coinsList.forEach(coin => {
-                if(autoCompleteCounter < 50) {
+                if(autoCompleteCounter < 10) {
                     let id = coin.id;
                     if(id.startsWith(text)) {
                         newArray.push({name:id,symbol:coin.symbol});
@@ -64,11 +64,14 @@ function TopHeader(props) {
                     <input type='text' id='searchInput' value={text} 
                     onChange={e => {setText(e.target.value);
                     }} 
-                    onFocus={ () => {props.setOpen(true)}} onBlur={ () => {props.setOpen(false)}} />
+                    onFocus={ () => {props.setOpen(true)}} onBlur={ (e) => {
+                        props.setOpen(false);
+                        setText('');
+                        }} />
                 </div>
-                <p>X</p>
+                <p></p>{/*TODO: Add the currency changer*/}
             </div>
-            {props.open && <SearchListData coinsSuggestion={coinsSug}/> }
+            {props.open && <SearchListData changeCoin={props.changeCoin} coinsSuggestion={coinsSug}/>}
         </div>
     )
 }

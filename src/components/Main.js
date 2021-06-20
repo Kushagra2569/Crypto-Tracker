@@ -42,7 +42,7 @@ function Main() {
   return (
       <div >
         <div className="topDiv">
-            <TopHeader open={open} setOpen={setOpen}/>
+            <TopHeader changeCoin={changeSelCoin} open={open} setOpen={setOpen}/>
         </div>
         <div className="maindiv">
             <TopBar changeCoin={changeSelCoin} />
