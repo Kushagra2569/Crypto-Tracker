@@ -19,7 +19,6 @@ function Main() {
           newArr[0].priceChange24h = data.market_data.price_change_24h;
           newArr[0].priceChange24hper = data.market_data.price_change_percentage_24h;
           setCoinProp(newArr);
-          console.log(coinProp[0].price);
       });
   }
 
