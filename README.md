@@ -1,4 +1,4 @@
-# This Project is live at [Crypto Tracker](https://github.com/Kushagra2569/Crypto-Tracker)
+# This Project is live at [Crypto Tracker](https://kushagra2569.github.io/Crypto-Tracker/)
 
 # Getting Started with Create React App
 
