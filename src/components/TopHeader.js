@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import SearchListData from './SearchListData'
 
+
 function TopHeader(props) {
     const [text, setText] = useState('');
     const [coinsList, setCoinsList] = useState([]);
     const [coinsSug, setCoinsSug] = useState([])
+    const [CurrText, setCurrText] = useState('USD')
 
     function getAutoCompleteData() {
         let url =
@@ -69,7 +71,14 @@ function TopHeader(props) {
                         setText('');
                         }} />
                 </div>
-                <p></p>{/*TODO: Add the currency changer*/}
+                <button id='currencySelector'  onClick={() => {if(CurrText === 'USD') {
+                    setCurrText('INR');
+                    props.setCurr('inr');
+                }
+                else if (CurrText === 'INR') {
+                    setCurrText('USD');
+                    props.setCurr('usd');
+                }}}>{CurrText}</button>
             </div>
             {props.open && <SearchListData changeCoin={props.changeCoin} coinsSuggestion={coinsSug}/>}
         </div>
