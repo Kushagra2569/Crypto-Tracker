@@ -1,5 +1,10 @@
 # This Project is live at [Crypto Tracker](https://kushagra2569.github.io/Crypto-Tracker/)
 
+TODO:
+!Make the Web App responsive
+!Revamp the currency selector for smooth addition of new currencies
+!Fetch a different api for more data for a realistic graph
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
