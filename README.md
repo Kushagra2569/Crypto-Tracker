@@ -8,6 +8,8 @@ TODO:
 
 !Fetch a different api for more data for a realistic graph.
 
+!Add CreateContext and useContext to redundant props.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
